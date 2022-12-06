@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    android:scrollbarSize="25sp"
+    tools:context=".MainActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/material_dynamic_secondary0"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textview1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car Rental Service"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Spinner
+        android:id="@+id/spin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:scrollbarSize="20dp"
+
+
+        />
+    <EditText
+        android:id="@+id/et_rent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spin1"
+        android:layout_marginTop="15dp"
+        android:hint="Please select car to display daily rent "
+        android:textAlignment="center"
+
+
+        />
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_rent"
+        android:layout_marginTop="15dp"
+        android:text="Select Number of day you want to rent "
+
+
+        />
+    <EditText
+        android:id="@+id/TV_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/textview2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_rent"
+        android:hint="#Days"
+
+        />
+
+
+
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview2"
+        android:max="10"
+        android:progress="0"
+        android:layout_marginTop="15dp"
+
+
+        />
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Driver's Age"
+        app:layout_constraintTop_toBottomOf="@id/seekbar"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:layout_marginRight="200dp"
+        android:textStyle="bold"
+
+
+        />
+    <RadioButton
+        android:id="@+id/ar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview3"
+        android:text="Less than 20"
+        android:layout_marginLeft="100dp"
+        />
+    <RadioButton
+        android:id="@+id/ar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ar1"
+        android:text="Berween 21 and 60"
+        android:layout_marginLeft="100dp"
+        />
+    <RadioButton
+        android:id="@+id/ar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ar2"
+        android:text="Above 60"
+        android:layout_marginLeft="100dp"
+
+        />
+    <TextView
+        android:id="@+id/TVoptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ar3"
+        android:text="Options"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginRight="150dp"
+        />
+    <CheckBox
+        android:id="@+id/opr1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TVoptions"
+        android:layout_marginLeft="30dp"
+        android:text="GPS"
+        android:layout_marginTop="10dp"
+        />
+    <CheckBox
+        android:id="@+id/opr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/opr1"
+        app:layout_constraintTop_toBottomOf="@id/TVoptions"
+        android:layout_marginLeft="30dp"
+        android:text="Child Seat"
+        android:layout_marginTop="10dp"
+        />
+    <CheckBox
+        android:id="@+id/opr3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/opr2"
+        app:layout_constraintTop_toBottomOf="@id/TVoptions"
+        android:layout_marginLeft="30dp"
+        android:text="Unlimited Milage"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/et_amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opr1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        />
+    <EditText
+        android:id="@+id/et_tp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Total Payment"
+        app:layout_constraintStart_toEndOf="@id/et_amt"
+        app:layout_constraintTop_toBottomOf="@id/opr1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_tp"
+        android:layout_marginTop="20dp"
+        android:text="VEIW DETAILS"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

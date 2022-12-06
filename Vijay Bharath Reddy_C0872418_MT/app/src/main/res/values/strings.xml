@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VijayBharathReddy_C0872418_MT</string>
+    <string-array name="car_name">
+        <item> Select Car </item>
+        <item> BMW 320d </item>
+        <item> Audi Q3 </item>
+        <item> Mazda M5 </item>
+        <item> Toyota Camry </item>
+        <item> Hundai Elantra </item>
+        <item> Ferrari </item>
+        <item> Tesla </item>
+        <item> Honda Civic </item>
+    </string-array>
+    
+</resources>
