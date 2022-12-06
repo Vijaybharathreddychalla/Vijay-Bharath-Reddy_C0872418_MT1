@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     CheckBox op1;
     CheckBox op2;
     CheckBox op3;
-
-
+    SeekBar seekBar;
+    int x = 0;
+    int age_price;
+    String s;
 
 
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        daily_rent =findViewById(R.id.et_rent);
+        daily_rent = findViewById(R.id.et_rent);
         days = findViewById(R.id.TV_day);
         amount = findViewById(R.id.et_amt);
         total_payment = findViewById(R.id.et_tp);
@@ -53,18 +55,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         op1 = findViewById(R.id.opr1);
         op2 = findViewById(R.id.opr2);
         op3 = findViewById(R.id.opr3);
+        seekBar = findViewById(R.id.seekbar);
 
 
 
 
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int a = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                a = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                days.setText("" + a);
+
+            }
+        });
 
 
         spinner = findViewById(R.id.spin1);
 
 
-
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.car_name, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.car_name, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -75,14 +95,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
-        switch (text){
+        switch (text) {
             case "BMW":
                 daily_rent.setText("$100");
                 break;
-            case "Audi Q3" :
+            case "Audi Q3":
                 daily_rent.setText("$150");
                 break;
-            case "Mazda M5"  :
+            case "Mazda M5":
                 daily_rent.setText("$70");
                 break;
 
@@ -103,10 +123,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 daily_rent.setText("$60");
                 break;
 
-
-
-
         }
+        String s = String.valueOf(daily_rent.getText());
 
     }
 
@@ -114,4 +132,55 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    public void onRadioButtonClicked(View view) {
+        int age_price = 0;
+        switch (view.getId()) {
+            case R.id.ar1:
+                age_price = 5;
+                break;
+
+
+            case R.id.ar3:
+                age_price = -10;
+                break;
+        }
+
+    }
+
+    public void onCheckboxClicked(View view) {
+
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.opr1:
+                if (checked)
+                    x = 5;
+
+                break;
+            case R.id.opr2:
+                if (checked)
+                    x = 7;
+
+                break;
+            case R.id.opr3:
+                if (checked)
+                    x = 10;
+
+                break;
+
+        }
+//        int b = Integer.parseInt(s);
+//
+//        amount.setText(""+b+age_price+x);x
+
+
+
+
+
+
+
+    }
+
+
 }

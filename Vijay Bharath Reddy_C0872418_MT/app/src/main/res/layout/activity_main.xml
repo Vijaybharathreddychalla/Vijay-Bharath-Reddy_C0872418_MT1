@@ -50,6 +50,9 @@
         android:layout_marginTop="15dp"
         android:hint="Please select car to display daily rent "
         android:textAlignment="center"
+        android:autoSizeTextType="none"
+        android:cursorVisible="false"
+        android:keyboardNavigationCluster="false"
 
 
         />
@@ -116,6 +119,7 @@
         app:layout_constraintTop_toBottomOf="@id/textview3"
         android:text="Less than 20"
         android:layout_marginLeft="100dp"
+        android:onClick="onRadioButtonClicked"
         />
     <RadioButton
         android:id="@+id/ar2"
@@ -126,6 +130,7 @@
         app:layout_constraintTop_toBottomOf="@id/ar1"
         android:text="Berween 21 and 60"
         android:layout_marginLeft="100dp"
+        android:onClick="onRadioButtonClicked"
         />
     <RadioButton
         android:id="@+id/ar3"
@@ -136,6 +141,7 @@
         app:layout_constraintTop_toBottomOf="@id/ar2"
         android:text="Above 60"
         android:layout_marginLeft="100dp"
+        android:onClick="onRadioButtonClicked"
 
         />
     <TextView
@@ -159,6 +165,7 @@
         android:layout_marginLeft="30dp"
         android:text="GPS"
         android:layout_marginTop="10dp"
+        android:onClick="onCheckboxClicked"
         />
     <CheckBox
         android:id="@+id/opr2"
@@ -169,6 +176,7 @@
         android:layout_marginLeft="30dp"
         android:text="Child Seat"
         android:layout_marginTop="10dp"
+        android:onClick="onCheckboxClicked"
         />
     <CheckBox
         android:id="@+id/opr3"
@@ -179,6 +187,7 @@
         android:layout_marginLeft="30dp"
         android:text="Unlimited Milage"
         android:layout_marginTop="10dp"
+        android:onClick="onCheckboxClicked"
         />
     <EditText
         android:id="@+id/et_amt"
